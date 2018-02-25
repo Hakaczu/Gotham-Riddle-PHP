@@ -1,24 +1,26 @@
 <?php
 
 class MySafe extends SafeAbstract {
-    protected $pin = '1234';
+    protected $password = '1234';
     protected $secret = 'Okoń';
 
-    public function unlock($pin) {
-        if ($this->getPin() == $pin) {
-            $this->setLocked(false);
-            return true;
-        }
+    private $lock;
 
-        return false;
+    public function __construct(Lock $lock)
+    {
+        $this->lock = $lock;
+    }
+
+    public function unlock($pin){
+       $this->lock->unlock($pin, $this->password);
     }
 
     public function lock(){
-        $this->setLocked(true);
+        $this->lock->lock();
     }
 
     public function getSecret(){
-        if ($this->isLocked() == true) {
+        if ($this->lock->isLocked() == true) {
             return false;
         }
 
@@ -26,7 +28,7 @@ class MySafe extends SafeAbstract {
     }
 
     public function setSecret($secret){
-        if ($this->isLocked() == true) {
+        if ($this->lock->isLocked() == true) {
             return false;
         }
 

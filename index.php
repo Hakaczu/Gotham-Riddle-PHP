@@ -12,3 +12,8 @@ $safeModel = $mySafe->model;
 $producer =  $mySafe->getProducer();
 
 echo "Welcome to $safeModel produced by $producer <br />";
+
+$mySafe->unlock('1234');
+echo $mySafe->getSecret();
+$mySafe->lock();
+
