@@ -1,8 +1,8 @@
 <?php
-include 'LockAbstract.php';
-include 'Lock.php';
-include 'SafeAbstract.php';
-include 'MySafe.php';
+include '_lib/LockAbstract.php';
+include '_lib/Lock.php';
+include '_lib/SafeAbstract.php';
+include '_lib/MySafe.php';
 
 $myLock = new Lock();
 $mySafe = new MySafe($myLock);
