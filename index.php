@@ -1,4 +1,9 @@
 <?php
+
+spl_autoload_register(function ($class_name) {
+    include '_layout/' .  $class_name . '.php';
+});
+
 include '_layout/head.html';
 include '_layout/body_top.html';
 include '_action/route.php';
