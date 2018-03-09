@@ -5,8 +5,13 @@
  * Date: 04.03.2018
  * Time: 19:35
  */
+spl_autoload_register(function ($class_name) {
+    include '../_lib/' .  $class_name . '.php';
+});
 $myLock = new Lock();
 $mySafe = new MySafe($myLock);
+
+
 
 
 $safeModel = $mySafe->model;
