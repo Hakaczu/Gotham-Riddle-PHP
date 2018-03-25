@@ -11,8 +11,14 @@ include '_layout/head.html';
     <div class="row">
         <div class="col-sm-12 col-lg-12 text-center">
             <div>
-                <h1>The Safe - Online Game</h1>
                 <?php
+                $myLock = new Lock();
+                $mySafe = new MySafe($myLock);
+
+                $safeModel = $mySafe->model;
+                $producer =  $mySafe->getProducer();
+
+                echo '<h1>Welcome to '.$safeModel.' produced by '.$producer.'</h1>';
                 include '_action/route.php';
                 ?>
             </div>

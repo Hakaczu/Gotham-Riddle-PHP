@@ -13,7 +13,13 @@ else {
 }
 
 if ($action){
-
+    switch ($action){
+        case 'login':
+            include "./_action/login.php";
+            break;
+        default:
+            include "./_layout/safe_form.html";
+    }
 }
 else {
     include "./_layout/safe_form.html";
