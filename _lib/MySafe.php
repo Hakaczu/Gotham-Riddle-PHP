@@ -34,4 +34,8 @@ class MySafe extends SafeAbstract {
 
         $this->secret = $secret;
     }
+
+    public function get_status(){
+        return $this->lock->isLocked();
+    }
 }
