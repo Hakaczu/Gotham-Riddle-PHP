@@ -3,7 +3,7 @@
 spl_autoload_register(function ($class_name) {
     include '_lib/' . $class_name . '.php';
 });
-
+require_once '_lib/print_data.php';
 include '_layout/head.html';
 ?>
 <body>
@@ -19,6 +19,7 @@ include '_layout/head.html';
                 $producer =  $mySafe->getProducer();
 
                 echo '<h1>Welcome to '.$safeModel.' produced by '.$producer.'</h1>';
+
                 include '_action/route.php';
                 ?>
             </div>
