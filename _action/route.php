@@ -13,8 +13,17 @@ else {
 }
 
 if ($action){
+    switch ($_GET['action']){
+        case 'login':
+            include "./_action/login.php";
+            break;
+        default:
+            include "./_action/riddle.php";
+            include "./_layout/safe_form.html";
+    }
 
 }
 else {
+    include "./_action/riddle.php";
     include "./_layout/safe_form.html";
 }

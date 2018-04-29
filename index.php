@@ -7,11 +7,11 @@ spl_autoload_register(function ($class_name) {
 include '_layout/head.html';
 ?>
 <body>
-<div class="container">
+<div class="container-fluid">
     <div class="row">
-        <div class="col-sm-12 col-lg-12 text-center">
+        <div class="col-sm-12 col-lg-12 my-auto text-center">
             <div>
-                <h1>The Safe - Online Game</h1>
+                <h1 class="title">The Riddler</h1>
                 <?php
                 include '_action/route.php';
                 ?>

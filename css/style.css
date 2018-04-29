@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Gaegu');
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    background: url("riddler.jpg") center left no-repeat;
+    background-size: cover;
+    font-family: 'Gaegu', cursive;
+    font-size: 36px;
+    color: lawngreen;
+    text-shadow: 0px 0 3px #000000;
+}
+.title {
+    font-size: 72px;
+}
+.riddle {
+    font-size: 36px;
+}
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+    outline: 0 none;
+}
+.try:focus{
+    border-color: rgba(126, 239, 104, 0.8);
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(126, 239, 104, 0.6);
+    outline: 0 none;
+}
+.try {
+    background-color: lawngreen;
+    border-color: lawngreen;
+}
