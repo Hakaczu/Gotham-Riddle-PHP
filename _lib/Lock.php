@@ -5,6 +5,7 @@ class Lock extends LockAbstract {
         $this->locked = true;
     }
 
+
     public function unlock($password1, $password2){
         if($password1 == $password2){
             $this->locked = false;

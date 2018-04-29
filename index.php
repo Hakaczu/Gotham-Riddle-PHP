@@ -3,7 +3,7 @@
 spl_autoload_register(function ($class_name) {
     include '_lib/' . $class_name . '.php';
 });
-
+require_once '_lib/print_data.php';
 include '_layout/head.html';
 ?>
 <body>
@@ -11,8 +11,19 @@ include '_layout/head.html';
     <div class="row">
         <div class="col-sm-12 col-lg-12 my-auto text-center">
             <div>
+<<<<<<< HEAD
                 <h1 class="title">The Riddler</h1>
+=======
+>>>>>>> bdc3482e82b2fe9bab6a95c12ba231a83f5f2ba6
                 <?php
+                $myLock = new Lock();
+                $mySafe = new MySafe($myLock);
+
+                $safeModel = $mySafe->model;
+                $producer =  $mySafe->getProducer();
+
+                echo '<h1>Welcome to '.$safeModel.' produced by '.$producer.'</h1>';
+
                 include '_action/route.php';
                 ?>
             </div>
