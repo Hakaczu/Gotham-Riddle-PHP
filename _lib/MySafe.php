@@ -11,12 +11,16 @@ class MySafe extends SafeAbstract {
         $this->lock = $lock;
     }
 
-    public function unlock($pin){
-       $this->lock->unlock($pin, $this->password);
-    }
-
     public function lock(){
         $this->lock->lock();
+    }
+
+    public function  unlock($answer){
+        $this->lock->unlock($answer);
+    }
+
+    public function setAnswer($answer){
+        $this->lock->setAnswer($answer);
     }
 
     public function getSecret(){

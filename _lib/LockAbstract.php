@@ -3,7 +3,7 @@ abstract class LockAbstract {
     protected $locked = true;
 
     abstract public function lock();
-    abstract public function unlock($pasword1, $password2);
+    abstract public function unlock($answer);
 
     public function isLocked(){
         return $this->locked;

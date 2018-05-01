@@ -12,3 +12,4 @@ $riddles_record = $riddles_connect->get_record('riddles',$id);
 $count = $riddles_connect->get_count_record('riddles');
 echo '<h2 class="riddle">Riddle:</h2>';
 echo $riddles_record['riddle'];
+$_SESSION['answer'] = $riddles_record['answer'];
