@@ -17,10 +17,6 @@ class MySafe extends SafeAbstract {
         $this->lock->unlock($answer);
     }
 
-    public function setAnswer($answer){
-        $this->lock->setAnswer($answer);
-    }
-
     public function getSecret(){
         if ($this->lock->isLocked() == true) {
             return false;
