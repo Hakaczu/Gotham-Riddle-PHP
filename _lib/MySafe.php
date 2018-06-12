@@ -1,8 +1,6 @@
 <?php
 
 class MySafe extends SafeAbstract {
-    protected $password = '1234';
-    protected $secret = 'Okoń';
 
     private $lock;
 
@@ -17,10 +15,6 @@ class MySafe extends SafeAbstract {
 
     public function  unlock($answer){
         $this->lock->unlock($answer);
-    }
-
-    public function setAnswer($answer){
-        $this->lock->setAnswer($answer);
     }
 
     public function getSecret(){

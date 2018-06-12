@@ -3,9 +3,9 @@ class Lock extends LockAbstract {
 
     private $answer;
 
-    public function setAnswer($answer)
+    public function __construct()
     {
-        $this->answer = $answer;
+        $this -> answer = $_SESSION['answer'];
     }
 
     public function lock(){
@@ -15,6 +15,7 @@ class Lock extends LockAbstract {
     public function unlock($answer){
         if($answer == $this->answer or $answer=='Gotham'){
             $this->locked = false;
+            $_SESSION['isLogin'] = true;
         }
     }
 
