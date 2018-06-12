@@ -13,7 +13,6 @@ include '_layout/head.html';
             <div>
                 <h1 class="title">The Riddler</h1>
                 <?php
-                echo $_SESSION['isLogin'];
                 include '_action/route.php';
                 ?>
             </div>
