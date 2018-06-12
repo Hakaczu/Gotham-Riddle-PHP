@@ -1,8 +1,6 @@
 <?php
 
 class MySafe extends SafeAbstract {
-    protected $password = '1234';
-    protected $secret = 'Okoń';
 
     private $lock;
 
