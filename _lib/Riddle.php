@@ -15,7 +15,7 @@ class Riddle
     public function __construct(DataBaseOperations $db_connect)
     {
         $this -> db_connect = $db_connect;
-        $this ->draw_riddle();
+        $this ->drawRiddle();
         $this->getRiddleRecord();
     }
 
