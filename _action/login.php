@@ -8,8 +8,6 @@
 
 $myLock = new Lock();
 $mySafe = new MySafe($myLock);
-
-$mySafe->setAnswer($_SESSION['answer']);
 $userAnswer = $_POST["answer"];
 $mySafe->unlock($userAnswer);
 if($mySafe->get_status() or !$_SESSION['isLogin'])
