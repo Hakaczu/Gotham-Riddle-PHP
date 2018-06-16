@@ -6,13 +6,12 @@
  * Time: 19:35
  */
 
-$myLock = new Lock();
+$myLock = new Lock($_SESSION['answer']);
 $mySafe = new MySafe($myLock);
 
-$mySafe->setAnswer($_SESSION['answer']);
 $userAnswer = $_POST["answer"];
 $mySafe->unlock($userAnswer);
-if($mySafe->get_status() or !$_SESSION['isLogin'])
+if($mySafe->get_status())
 {
     header("Location: index.php?action=wrong");
 }

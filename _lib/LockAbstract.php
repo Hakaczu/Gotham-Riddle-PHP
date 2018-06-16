@@ -9,9 +9,5 @@ abstract class LockAbstract {
         return $this->locked;
     }
 
-    public function setLocked($locked){
-        $this->locked = $locked;
-    }
-
 
 }
