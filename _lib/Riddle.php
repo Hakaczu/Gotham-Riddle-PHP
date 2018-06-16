@@ -20,7 +20,7 @@ class Riddle
     }
 
     private function drawRiddle(){
-            $this->riddle_id = rand(1, $this->db_connect->get_count_record('riddles'));
+        $this->riddle_id = rand(1, $this->db_connect->get_count_record('riddles'));
     }
 
     private function getRiddleRecord(){

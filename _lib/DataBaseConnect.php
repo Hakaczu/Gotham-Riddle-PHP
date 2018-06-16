@@ -17,8 +17,7 @@ abstract class DataBaseConnect {
             $this ->_connection = new PDO("$this->_sqll:host=$this->_host;dbname=$this->_database",$this->_username,$this->_password);
             $this->_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch (PDOException $ex){
-            echo "Problem with connect to DataBase.";
-            exit;
+            die("Problem with connect to DataBase.");
         }
 
     }
