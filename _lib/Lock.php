@@ -6,6 +6,9 @@ class Lock extends LockAbstract {
     public function __construct($answer)
     {
         $this -> answer = $answer;
+        if($_SESSION['isLogin']){
+            $this->locked = false;
+        }
     }
 
     public function lock(){
