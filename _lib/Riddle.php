@@ -14,13 +14,13 @@ class Riddle
 
     public function __construct(DataBaseOperations $db_connect)
     {
-        $this -> db_connect = $db_connect;
-        $this ->draw_riddle();
-        $this->getRiddleRecord();
+            $this->db_connect = $db_connect;
+            $this->drawRiddle();
+            $this->getRiddleRecord();
     }
 
     private function drawRiddle(){
-        $this->riddle_id = rand(1,$this->db_connect->get_count_record('riddles'));
+            $this->riddle_id = rand(1, $this->db_connect->get_count_record('riddles'));
     }
 
     private function getRiddleRecord(){

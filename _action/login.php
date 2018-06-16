@@ -6,29 +6,30 @@
  * Time: 19:35
  */
 
-$myLock = new Lock();
-$mySafe = new MySafe($myLock);
-
-$mySafe->setAnswer($_SESSION['answer']);
-$userAnswer = $_POST["answer"];
-$mySafe->unlock($userAnswer);
-if($mySafe->get_status() or !$_SESSION['isLogin'])
-{
-    header("Location: index.php?action=wrong");
-}
-else
-{
-    $_SESSION['isLogin'] = true;
-    echo 'Yeah you\'re right <br/>';
-    $userTime = time() - $_SESSION['timeStart'];
-    if($userTime >= 60)
-    {
-        $minutes = floor($userTime/60);
-        $seconds = $userTime&60;
-        echo 'Your Time: '.$minutes.' minutes and '.$seconds.' seconds';
-    }
-    else {
-        echo 'Your Time: '.$userTime.' seconds';
-    }
+if(!empty($_POST['answer']) and isset($_POST['answer'])){
+   $post = true;
+} else{
+    $post = false;
 }
 
+if (!empty($_SESSION['isLogin']) And isset($_SESSION['isLogin'])) {
+    $isLogin = true;
+}
+else{
+    $isLogin = false;
+}
+
+if ($isLogin){
+    echo DisplaySuccessScreen::stayLogged();
+}
+elseif($post) {
+    $myLock = new Lock($_SESSION['answer']);
+    $mySafe = new MySafe($myLock);
+    $userAnswer = $_POST['answer'];
+    $mySafe->unlock($userAnswer);
+    if ($mySafe->get_status()) {
+        header("Location: index.php");
+    } else {
+        echo DisplaySuccessScreen::firstLogin();
+    }
+}
