@@ -9,7 +9,7 @@ abstract class DataBaseConnect {
     protected $_connection;
     private $_host = "localhost";
     private $_username = "root";
-    private $_password = "";
+    private $_password = "root";
     private $_database = "riddler";
     private $_sqll = "mysql";
     public function __construct() {
