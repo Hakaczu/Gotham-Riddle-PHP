@@ -7,7 +7,7 @@
  */
 abstract class DataBaseConnect {
     protected $_connection;
-    private $_host = "localhost";
+    private $_host = "mariadb";
     private $_username = "root";
     private $_password = "root";
     private $_database = "riddler";
