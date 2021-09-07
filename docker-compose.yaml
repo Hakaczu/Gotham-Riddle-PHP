@@ -16,7 +16,7 @@ services:
     ports: 
       - 3306:3306
     volumes:
-      - ./db/riddler.sql
+      - ./db/riddler.sql:/docker-entrypoint-initdb.d/riddler.sql
     environment:
       MYSQL_DATABASE: riddler
       MYSQL_ROOT_PASSWORD: "root"
