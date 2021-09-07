@@ -18,6 +18,7 @@ abstract class DataBaseConnect {
             $this->_connection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }catch (PDOException $ex){
             echo "Problem with connect to DataBase.";
+            echo $ex;
             exit;
         }
 
