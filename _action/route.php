@@ -5,7 +5,7 @@
  * Date: 04.03.2018
  * Time: 10:35
  */
-if ($_SERVER["SCRIPT_FILENAME"]==str_replace('\\','/',__FILE__)) header('Location: ../index.php');
+if ($_SERVER["SCRIPT_FILENAME"]==str_replace('\\','/',__FILE__)) echo "<script> location.href='index.php'; </script>";
 
 if (!empty($_GET['action']) And isset($_GET['action'])) {
     $action = true;

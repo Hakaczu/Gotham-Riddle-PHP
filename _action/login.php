@@ -28,7 +28,8 @@ elseif($post) {
     $userAnswer = $_POST['answer'];
     $mySafe->unlock($userAnswer);
     if ($mySafe->get_status()) {
-        header("Location: index.php");
+        echo "<script> location.href='index.php'; </script>";
+        exit;
     } else {
         echo DisplaySuccessScreen::firstLogin();
     }

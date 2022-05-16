@@ -8,4 +8,4 @@
 session_start();
 $_SESSION['isLogin'] = false;
 unset($_SESSION['timeStart']);
-header('Location: ../index.php');
+echo "<script> location.href='../index.php'; </script>";

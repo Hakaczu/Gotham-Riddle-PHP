@@ -1,8 +1,8 @@
 <?php
-
 spl_autoload_register(function ($class_name) {
     include '_lib/' . $class_name . '.php';
 });
+
 include '_action/session.php';
 include '_layout/head.html';
 ?>
